@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3: Programación como Otra Lengua</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .iframe-safe { 
+            overflow: hidden; 
+            max-width: 100%; 
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .transition-card {
+            transition: all 0.3s ease;
+        }
+        .transition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .icon-bounce {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body class="iframe-safe bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-6">
+        <!-- Header -->
+        <div class="gradient-bg rounded-lg p-6 mb-6 text-white">
+            <div class="flex items-center justify-center mb-4">
+                <div class="bg-white bg-opacity-20 rounded-full p-3 mr-4">
+                    <i class="fas fa-code text-2xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-center">Módulo 3: Programación como Otra Lengua</h1>
+            </div>
+            <p class="text-center text-lg opacity-90">De Scratch a Micro:bit: Un viaje hacia el lenguaje universal</p>
+        </div>
+
+        <!-- Transición Visual -->
+        <div class="bg-white rounded-lg card-shadow p-6 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-exchange-alt text-blue-600 mr-3"></i>
+                Transición Educativa
+            </h2>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+                <!-- Scratch -->
+                <div class="transition-card bg-orange-50 rounded-lg p-4 text-center w-full md:w-1/3">
+                    <div class="bg-orange-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-puzzle-piece text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-orange-700 mb-2">Scratch</h3>
+                    <p class="text-sm text-gray-600">Introducción visual y creativa a la programación</p>
+                </div>
+                
+                <!-- Flecha -->
+                <div class="text-blue-600 icon-bounce">
+                    <i class="fas fa-arrow-right text-2xl"></i>
+                </div>
+                
+                <!-- Micro:bit -->
+                <div class="transition-card bg-green-50 rounded-lg p-4 text-center w-full md:w-1/3">
+                    <div class="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-microchip text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-green-700 mb-2">Micro:bit</h3>
+                    <p class="text-sm text-gray-600">Programación física y proyectos interactivos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <!-- Lenguaje Universal -->
+            <div class="bg-white rounded-lg card-shadow p-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-globe text-blue-600 mr-3"></i>
+                    Lenguaje Universal
+                </h3>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                        <span>Comunicar ideas de forma precisa y estructurada</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                        <span>Resolver problemas complejos paso a paso</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                        <span>Crear soluciones innovadoras y funcionales</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                        <span>Conectar mundo digital con mundo físico</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Aplicaciones Prácticas -->
+            <div class="bg-white rounded-lg card-shadow p-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-tools text-purple-600 mr-3"></i>
+                    Aplicaciones Prácticas
+                </h3>
+                <div class="space-y-3">
+                    <div class="bg-blue-50 rounded-lg p-3">
+                        <h4 class="font-semibold text-blue-700">Juegos interactivos</h4>
+                        <p class="text-sm text-gray-600">Creación de experiencias lúdicas y educativas</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-lg p-3">
+                        <h4 class="font-semibold text-purple-700">Automatización</h4>
+                        <p class="text-sm text-gray-600">Soluciones para tareas repetitivas y control</p>
+                    </div>
+                    <div class="bg-green-50 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-700">Control físico</h4>
+                        <p class="text-sm text-gray-600">Interacción con sensores y actuadores</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pensamiento Computacional -->
+        <div class="bg-white rounded-lg card-shadow p-6 mb-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-brain text-indigo-600 mr-3"></i>
+                Pensamiento Computacional Aplicado
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="bg-red-100 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-puzzle-piece text-red-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-700">Descomposición</h4>
+                    <p class="text-xs text-gray-500">Dividir problemas complejos</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-search text-blue-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-700">Patrones</h4>
+                    <p class="text-xs text-gray-500">Reconocer similitudes</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-layer-group text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-700">Abstracción</h4>
+                    <p class="text-xs text-gray-500">Simplificar conceptos</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-cog text-purple-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-700">Algoritmos</h4>
+                    <p class="text-xs text-gray-500">Secuencias lógicas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Competencias Transversales -->
+        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-star text-yellow-500 mr-3"></i>
+                Competencias Transversales
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <i class="fas fa-lightbulb text-yellow-500 text-2xl mb-2"></i>
+                    <p class="font-semibold text-gray-700">Creatividad</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-users text-blue-500 text-2xl mb-2"></i>
+                    <p class="font-semibold text-gray-700">Colaboración</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-cogs text-gray-500 text-2xl mb-2"></i>
+                    <p class="font-semibold text-gray-700">Prototipado</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-presentation text-green-500 text-2xl mb-2"></i>
+                    <p class="font-semibold text-gray-700">Presentación</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-6 text-gray-500">
+            <p class="text-sm">
+                <i class="fas fa-graduation-cap mr-2"></i>
+                Curso de Pensamiento Computacional - Módulo 3
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDk930jElO1SpglF%2BuEVsyB5C8Ite46CvhLE00M%2BAQ103575F4UkDvUzet%2Bz8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq%2BB%2BMiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj%2BVnczfBQ6pC4h6sP7nUGOXrLS%2BnUjSLOwa4Z%2FdTwFgJpA6fgsHDcwpz%2FnXhdYb1b19HvKBqRzIyfG7sqkHMbtBlbd1hAS2ecmfUMwA34wEXPXfBPqpU63QGz3C3EORe3azeMq3Xu3ybPm0Ks9W6%2FLCQS4kzxwF0lYz%2FlQjPb9j7wWoaGg8PY1BOYQZfRMWQNU8gLzql%2BDUkRAZf%2FkkOISeVn6cfuVR5LYZyRfMekQJ5hBvQKTJxjhvP7Hav6z7JXou1M7bKx5hF4Uv%2FCDWRqZjClyaj7962Fs6hqPN1z0zdXV%2F2KykAdVGBhG2BRjkCEDuw3QZJHxmyCw%2BQnh81Z%2FHEdgrMg5%2BapWxHiY2Y%2BWH%2F8EU55M4ZEIRdflkWIWMhE%3D";
+        window.__genspark_locale = "es-ES";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDk930jElO1SpglF+uEVsyB5C8Ite46CvhLE00M+AQ103575F4UkDvUzet+z8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq+B+MiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj+VnczfBQ6pC4h6sP7nUGOXrLS+nUjSLOwa4Z/dTwFgJpA6fgsHDcwpz/nXhdYb1b19HvKBqRzIyfG7sqkHMbtBlbd1hAS2ecmfUMwA34wEXPXfBPqpU63QGz3C3EORe3azeMq3Xu3ybPm0Ks9W6/LCQS4kzxwF0lYz/lQjPb9j7wWoaGg8PY1BOYQZfRMWQNU8gLzql+DUkRAZf/kkOISeVn6cfuVR5LYZyRfMekQJ5hBvQKTJxjhvP7Hav6z7JXou1M7bKx5hF4Uv/CDWRqZjClyaj7962Fs6hqPN1z0zdXV/2KykAdVGBhG2BRjkCEDuw3QZJHxmyCw+Qnh81Z/HEdgrMg5+apWxHiY2Y+WH/8EU55M4ZEIRdflkWIWMhE=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4: Impacto Social - Embebible</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .iframe-container {
+            max-width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: 20px;
+            padding: 30px;
+            min-height: calc(100vh - 40px);
+        }
+        .module-header {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .section-title {
+            color: #2d3748;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        .highlight-box {
+            background: #f7fafc;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .microbit-icon {
+            background: #00ed85;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .social-impact-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .citizenship-badge {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin: 5px;
+        }
+        .objective-item {
+            background: #edf2f7;
+            border-left: 4px solid #38a169;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tech-tool {
+            background: #2d3748;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 5px;
+            font-weight: 600;
+        }
+        .reflection-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #f6ad55;
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
+        <div class="content-card">
+            <div class="module-header">
+                <h1 class="text-2xl font-bold mb-2">
+                    <i class="fas fa-globe-americas mr-3"></i>
+                    Módulo 4: Transformaciones e Impacto Social
+                </h1>
+                <p class="text-lg opacity-90">Tecnología Digital y Pensamiento Computacional</p>
+            </div>
+
+            <div class="highlight-box">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">
+                    <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                    Potencial de la Programación para el Cambio Social
+                </h2>
+                <p class="text-gray-700 leading-relaxed">
+                    La programación y el pensamiento computacional, especialmente con dispositivos como 
+                    <span class="microbit-icon"><i class="fas fa-microchip"></i></span> 
+                    <strong>Micro:bit</strong>, nos permiten enfrentar desafíos sociales y éticos de manera innovadora.
+                </p>
+            </div>
+
+            <div class="section-title">
+                <i class="fas fa-users mr-2"></i>
+                Ciudadanía Digital
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="objective-item">
+                    <h3 class="font-bold text-gray-800 mb-2">
+                        <i class="fas fa-shield-alt text-blue-600 mr-2"></i>
+                        Derechos Digitales
+                    </h3>
+                    <p class="text-gray-700">Privacidad, acceso equitativo, libertad de expresión en línea</p>
+                </div>
+                <div class="objective-item">
+                    <h3 class="font-bold text-gray-800 mb-2">
+                        <i class="fas fa-handshake text-green-600 mr-2"></i>
+                        Responsabilidades
+                    </h3>
+                    <p class="text-gray-700">Uso ético, respeto digital, participación constructiva</p>
+                </div>
+            </div>
+
+            <div class="citizenship-badge">Participación Ciudadana</div>
+            <div class="citizenship-badge">Ética Digital</div>
+            <div class="citizenship-badge">Inclusión Tecnológica</div>
+            <div class="citizenship-badge">Sostenibilidad</div>
+
+            <div class="section-title">
+                <i class="fas fa-microchip mr-2"></i>
+                Micro:bit en Proyectos de Impacto Social
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="social-impact-card">
+                    <h3 class="font-bold text-lg mb-2">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        Educación
+                    </h3>
+                    <p>Herramientas interactivas para aprendizaje inclusivo y accesible</p>
+                </div>
+                <div class="social-impact-card">
+                    <h3 class="font-bold text-lg mb-2">
+                        <i class="fas fa-universal-access mr-2"></i>
+                        Accesibilidad
+                    </h3>
+                    <p>Dispositivos adaptativos para personas con discapacidades</p>
+                </div>
+                <div class="social-impact-card">
+                    <h3 class="font-bold text-lg mb-2">
+                        <i class="fas fa-leaf mr-2"></i>
+                        Medio Ambiente
+                    </h3>
+                    <p>Sensores ambientales y sistemas de monitoreo ecológico</p>
+                </div>
+                <div class="social-impact-card">
+                    <h3 class="font-bold text-lg mb-2">
+                        <i class="fas fa-vote-yea mr-2"></i>
+                        Participación Ciudadana
+                    </h3>
+                    <p>Sistemas de votación, encuestas y participación comunitaria</p>
+                </div>
+            </div>
+
+            <div class="section-title">
+                <i class="fas fa-robot mr-2"></i>
+                Inteligencia Artificial y Sociedad
+            </div>
+
+            <div class="highlight-box">
+                <h3 class="font-bold text-gray-800 mb-3">Desafíos Éticos y Sociales</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="text-center">
+                        <i class="fas fa-balance-scale text-3xl text-blue-600 mb-2"></i>
+                        <p class="font-semibold">Sesgos Algorítmicos</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-briefcase text-3xl text-orange-600 mb-2"></i>
+                        <p class="font-semibold">Futuro del Trabajo</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-eye text-3xl text-red-600 mb-2"></i>
+                        <p class="font-semibold">Privacidad de Datos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">
+                <i class="fas fa-cogs mr-2"></i>
+                Herramientas del Módulo
+            </div>
+
+            <div class="tech-tool">
+                <i class="fas fa-microchip mr-2"></i>
+                Micro:bit
+            </div>
+            <div class="tech-tool">
+                <i class="fas fa-code mr-2"></i>
+                MakeCode
+            </div>
+            <div class="tech-tool">
+                <i class="fas fa-project-diagram mr-2"></i>
+                Proyectos Sociales
+            </div>
+            <div class="tech-tool">
+                <i class="fas fa-users mr-2"></i>
+                Trabajo Colaborativo
+            </div>
+
+            <div class="reflection-box">
+                <h3 class="font-bold text-gray-800 mb-3 text-lg">
+                    <i class="fas fa-question-circle mr-2"></i>
+                    Reflexión Final
+                </h3>
+                <p class="text-gray-700 font-medium text-center">
+                    "¿Cómo puede la programación potenciar agentes de cambio social?"
+                </p>
+                <div class="mt-4 text-center">
+                    <div class="inline-block bg-white bg-opacity-50 px-4 py-2 rounded-lg">
+                        <i class="fas fa-arrow-right mr-2"></i>
+                        <span class="font-semibold">Programación → Soluciones Innovadoras → Impacto Social</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">
+                <i class="fas fa-target mr-2"></i>
+                Objetivos de Aprendizaje
+            </div>
+
+            <div class="objective-item">
+                <strong>Analizar</strong> el impacto de la tecnología digital en la sociedad actual
+            </div>
+            <div class="objective-item">
+                <strong>Desarrollar</strong> proyectos con Micro:bit que aborden problemas sociales
+            </div>
+            <div class="objective-item">
+                <strong>Reflexionar</strong> sobre la ética en el uso de tecnologías emergentes
+            </div>
+            <div class="objective-item">
+                <strong>Promover</strong> la ciudadanía digital responsable y participativa
+            </div>
+
+            <div class="text-center mt-8 p-6 bg-gray-100 rounded-lg">
+                <p class="text-gray-600 font-medium">
+                    <i class="fas fa-heart text-red-500 mr-2"></i>
+                    "La tecnología es mejor cuando une a las personas" - Matt Mullenweg
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDk930jElO1SpglF%2BuEVsyB5C8Ite46CvhLE00M%2BAQ103575F4UkDvUzet%2Bz8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq%2BB%2BMiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj%2BVnczfBQ6pC4h6sP7nUGOXrLS%2BnUjSLOwa4Z%2FdTwFgJpA6fgsHDcwpz%2FnXhdYb1ZLYKIs6pRr3yrQnBfrhjSJrodmsvVUFo%2FG1p%2BMvohc30D2b%2BWMsdQdyTogeT%2Fl%2BKEH8ELE%2BrrQRXbZwfJljMN7gQ0tlp96g2zKxI3I0UtUUa85e1iPomZXwXS2EHBAjRvplQf6TAu0rVIlpMn4pUFopSOLhZ5EyqfHYHTmWUVlpUPBGg1UzpmC0hO95OGbUmqAy4v4KQDQ0RAnb3IoXexQ8W%2F2EIHgmF1wcGmTWdyvCFqo9Jgc3IMNG%2FnNUpCwX4pLjI0%2FV2%2BHcpeleODbA5xBYdRMLHHXH2fJH7Izb48YRpIan4cgefAnUok0%2FAujIneP8S6ZNMZU95FyF1tLV37J";
+        window.__genspark_locale = "es-ES";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDk930jElO1SpglF+uEVsyB5C8Ite46CvhLE00M+AQ103575F4UkDvUzet+z8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq+B+MiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj+VnczfBQ6pC4h6sP7nUGOXrLS+nUjSLOwa4Z/dTwFgJpA6fgsHDcwpz/nXhdYb1ZLYKIs6pRr3yrQnBfrhjSJrodmsvVUFo/G1p+Mvohc30D2b+WMsdQdyTogeT/l+KEH8ELE+rrQRXbZwfJljMN7gQ0tlp96g2zKxI3I0UtUUa85e1iPomZXwXS2EHBAjRvplQf6TAu0rVIlpMn4pUFopSOLhZ5EyqfHYHTmWUVlpUPBGg1UzpmC0hO95OGbUmqAy4v4KQDQ0RAnb3IoXexQ8W/2EIHgmF1wcGmTWdyvCFqo9Jgc3IMNG/nNUpCwX4pLjI0/V2+HcpeleODbA5xBYdRMLHHXH2fJH7Izb48YRpIan4cgefAnUok0/AujIneP8S6ZNMZU95FyF1tLV37J";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

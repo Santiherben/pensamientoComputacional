@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1: Fundamentos del Pensamiento Computacional</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow-x: hidden;
+        }
+        .iframe-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .icon-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        .scratch-icon {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        .concept-badge {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        .programming-badge {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
+        <div class="container mx-auto px-4 py-6">
+            <!-- Header -->
+            <div class="content-card rounded-2xl p-6 mb-6 shadow-2xl">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-brain text-2xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Módulo 1</h1>
+                            <p class="text-xl text-gray-600">Fundamentos del Pensamiento Computacional</p>
+                        </div>
+                    </div>
+                    <div class="scratch-icon w-12 h-12 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-puzzle-piece text-white text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Left Column -->
+                <div class="space-y-6">
+                    <!-- Conceptos Fundamentales -->
+                    <div class="content-card rounded-2xl p-6 shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="concept-badge w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-lightbulb text-white"></i>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800">Conceptos Fundamentales</h2>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="feature-card rounded-lg p-4 text-white">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-puzzle-piece mr-2"></i>
+                                    <span class="font-semibold">Descomposición</span>
+                                </div>
+                                <p class="text-sm">Dividir problemas complejos en partes más manejables</p>
+                            </div>
+                            <div class="feature-card rounded-lg p-4 text-white">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-eye mr-2"></i>
+                                    <span class="font-semibold">Reconocimiento de Patrones</span>
+                                </div>
+                                <p class="text-sm">Identificar similitudes y tendencias en datos</p>
+                            </div>
+                            <div class="feature-card rounded-lg p-4 text-white">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-layer-group mr-2"></i>
+                                    <span class="font-semibold">Abstracción</span>
+                                </div>
+                                <p class="text-sm">Enfocarse en lo esencial, ignorar detalles irrelevantes</p>
+                            </div>
+                            <div class="feature-card rounded-lg p-4 text-white">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-list-ol mr-2"></i>
+                                    <span class="font-semibold">Algoritmos</span>
+                                </div>
+                                <p class="text-sm">Secuencias de pasos para resolver problemas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scratch Introduction -->
+                    <div class="content-card rounded-2xl p-6 shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="scratch-icon w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-play text-white"></i>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800">Introducción a Scratch</h2>
+                        </div>
+                        <div class="space-y-3">
+                            <p class="text-gray-700">
+                                <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                <strong>Puerta de entrada lúdica</strong> y visual a la programación
+                            </p>
+                            <p class="text-gray-700">
+                                <i class="fas fa-gamepad text-green-500 mr-2"></i>
+                                Permite crear <strong>juegos, animaciones e historias</strong> interactivas
+                            </p>
+                            <p class="text-gray-700">
+                                <i class="fas fa-users text-blue-500 mr-2"></i>
+                                Fomenta el <strong>aprendizaje colaborativo</strong> y la creatividad
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="space-y-6">
+                    <!-- Importancia y Aplicaciones -->
+                    <div class="content-card rounded-2xl p-6 shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="programming-badge w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-rocket text-white"></i>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800">Potencial de la Programación</h2>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h3 class="font-semibold text-gray-800 mb-2">Autonomía Digital</h3>
+                                <p class="text-gray-600 text-sm">Desarrollar habilidades desde edades tempranas para ser creadores, no solo consumidores de tecnología</p>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h3 class="font-semibold text-gray-800 mb-2">Resolución de Problemas</h3>
+                                <p class="text-gray-600 text-sm">Aplicar lógica computacional para analizar y resolver desafíos de la vida real</p>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h3 class="font-semibold text-gray-800 mb-2">Creatividad e Innovación</h3>
+                                <p class="text-gray-600 text-sm">Combinar arte, ciencia y tecnología para crear soluciones originales</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aplicaciones en el Aula -->
+                    <div class="content-card rounded-2xl p-6 shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="icon-bg w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-chalkboard-teacher text-white"></i>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800">Aplicaciones en el Aula</h2>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="feature-card rounded-lg p-4 text-white">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-book mr-2"></i>
+                                    <span class="font-semibold">Interdisciplinario</span>
+                                </div>
+                                <p class="text-sm">Integración con matemáticas, ciencias, arte y lenguaje</p>
+                            </div>
+                            <div class="feature-card rounded-lg p-4 text-white">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-hands-helping mr-2"></i>
+                                    <span class="font-semibold">Colaborativo</span>
+                                </div>
+                                <p class="text-sm">Proyectos en equipo que desarrollan habilidades sociales</p>
+                            </div>
+                            <div class="feature-card rounded-lg p-4 text-white">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-graduation-cap mr-2"></i>
+                                    <span class="font-semibold">Ciudadanía Digital</span>
+                                </div>
+                                <p class="text-sm">Formación de ciudadanos críticos y responsables</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="content-card rounded-2xl p-4 mt-6 shadow-xl">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="scratch-icon w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-code text-white text-sm"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            <strong>Próximo paso:</strong> Aplicar estos fundamentos en proyectos prácticos con Scratch
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-gray-500">Módulo 1 de 4</span>
+                        <div class="w-16 h-2 bg-gray-200 rounded-full">
+                            <div class="w-4 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDk930jElO1SpglF%2BuEVsyB5C8Ite46CvhLE00M%2BAQ103575F4UkDvUzet%2Bz8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq%2BB%2BMiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj%2BVnczfBQ6pC4h6sP7nUGOXrLS%2BnUjSLOwa4Z%2FdTwFgJpA6fgsHDcwpz%2FnXhdYb1bF7sMO3sD10a4cIoOF7cm4q%2BeTSx8t%2F%2BRaRmu7F3RFrJpq%2FZY33JnVmjSgakuMhfswdzMs6cD%2F78KbX9uKQSKr36gRH05ek3K8hq8L4x1OqA6%2FJqVGg74YlnRTQDKw8NJONajEMpdJTutAu81Sj8GeuLMiHZhBL5NGLcKdTAwsXHd9JKnqksOocL2%2Fsb%2F91NDQomZZRJP4C%2BAFGfxcpE3fR4kJaQafoFAdLpUH8A3noVMS0poM4F7y1nzqsVD1YcSXgehMkzRWWZV%2BfoFlaUVJblSqkKCr1KRG8P1JIQqQSF51kp1iWGlYIqPGtHGR0jMq7CDT10MabOhqFR63GZluGexGUSkbSI7sGSeEFbzMcA%3D%3D";
+        window.__genspark_locale = "es-ES";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDk930jElO1SpglF+uEVsyB5C8Ite46CvhLE00M+AQ103575F4UkDvUzet+z8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq+B+MiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj+VnczfBQ6pC4h6sP7nUGOXrLS+nUjSLOwa4Z/dTwFgJpA6fgsHDcwpz/nXhdYb1bF7sMO3sD10a4cIoOF7cm4q+eTSx8t/+RaRmu7F3RFrJpq/ZY33JnVmjSgakuMhfswdzMs6cD/78KbX9uKQSKr36gRH05ek3K8hq8L4x1OqA6/JqVGg74YlnRTQDKw8NJONajEMpdJTutAu81Sj8GeuLMiHZhBL5NGLcKdTAwsXHd9JKnqksOocL2/sb/91NDQomZZRJP4C+AFGfxcpE3fR4kJaQafoFAdLpUH8A3noVMS0poM4F7y1nzqsVD1YcSXgehMkzRWWZV+foFlaUVJblSqkKCr1KRG8P1JIQqQSF51kp1iWGlYIqPGtHGR0jMq7CDT10MabOhqFR63GZluGexGUSkbSI7sGSeEFbzMcA==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

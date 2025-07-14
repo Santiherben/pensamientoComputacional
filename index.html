@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Ruta: Pensamiento Computacional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #6366f1;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #4f46e5;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #6b7280;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(90deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 15px;
+            border-left: 5px solid #0ea5e9;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: #0ea5e9;
+            z-index: 1;
+        }
+        
+        .timeline-number {
+            width: 50px;
+            height: 50px;
+            background: #0ea5e9;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 0 auto 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            color: #0c4a6e;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-date {
+            font-size: 0.9em;
+            color: #0369a1;
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .module-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+        }
+        
+        .module-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .module-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-right: 15px;
+        }
+        
+        .module-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #374151;
+            line-height: 1.3;
+        }
+        
+        .module-content {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .module-tools {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .tool-tag {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .scratch-tag {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .microbit-tag {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .expand-btn {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .expand-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        .module-details {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid #6366f1;
+        }
+        
+        .module-details.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .competencies {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .competencies h2 {
+            color: #0c4a6e;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .competency-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #0ea5e9;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .schedule-info {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e5e7eb;
+            text-align: center;
+        }
+        
+        .schedule-info h3 {
+            color: #374151;
+            margin-bottom: 10px;
+        }
+        
+        .schedule-info p {
+            color: #6b7280;
+            font-size: 1.1em;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            color: #92400e;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .timeline-item::after {
+                display: none;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .competencies-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Pensamiento Computacional</h1>
+            <p>Mapa de Ruta del Curso - Magisterio 2025</p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-title">Fundamentos</div>
+                <div class="timeline-date">Miércoles/Viernes</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-title">Resolución</div>
+                <div class="timeline-date">Miércoles/Viernes</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-title">Programación</div>
+                <div class="timeline-date">Miércoles/Viernes</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-title">Impacto Social</div>
+                <div class="timeline-date">Miércoles/Viernes</div>
+            </div>
+        </div>
+        
+        <div class="modules-grid">
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-number">1</div>
+                    <div class="module-title">Fundamentos del Pensamiento Computacional</div>
+                </div>
+                <div class="module-tools">
+                    <span class="tool-tag scratch-tag">🐱 Scratch</span>
+                    <span class="tool-tag">🧩 Descomposición</span>
+                </div>
+                <div class="module-content">
+                    Conceptos fundamentales del pensamiento computacional: descomposición, reconocimiento de patrones, abstracción y algoritmos. <span class="highlight">Scratch</span> como puerta de entrada lúdica a la programación.
+                </div>
+                <button class="expand-btn" onclick="toggleModule(1)">Ver detalles</button>
+                <div class="module-details" id="module-1">
+                    <h4>🎯 Objetivos de aprendizaje:</h4>
+                    <ul>
+                        <li>Comprender los pilares del pensamiento computacional</li>
+                        <li>Reconocer patrones en problemas cotidianos</li>
+                        <li>Aplicar técnicas de descomposición</li>
+                        <li>Introducción práctica con Scratch</li>
+                    </ul>
+                    <h4>🛠️ Herramientas:</h4>
+                    <p>Scratch para proyectos visuales e interactivos que desarrollen autonomía digital.</p>
+                </div>
+            </div>
+            
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-number">2</div>
+                    <div class="module-title">Resolución de Problemas</div>
+                </div>
+                <div class="module-tools">
+                    <span class="tool-tag scratch-tag">🐱 Scratch</span>
+                    <span class="tool-tag">🔌 Conectado</span>
+                    <span class="tool-tag">📱 Desenchufado</span>
+                </div>
+                <div class="module-content">
+                    Estrategias efectivas para resolver problemas mediante pensamiento computacional. Actividades <span class="highlight">conectadas y desenchufadas</span> con Scratch para fomentar la creatividad.
+                </div>
+                <button class="expand-btn" onclick="toggleModule(2)">Ver detalles</button>
+                <div class="module-details" id="module-2">
+                    <h4>🎯 Objetivos de aprendizaje:</h4>
+                    <ul>
+                        <li>Desarrollar estrategias de resolución de problemas</li>
+                        <li>Integrar pensamiento visible y metacognición</li>
+                        <li>Aplicar computación creativa</li>
+                        <li>Diseñar actividades conectadas y desenchufadas</li>
+                    </ul>
+                    <h4>🛠️ Metodología:</h4>
+                    <p>Scratch para visualizar algoritmos y fomentar el trabajo colaborativo y el diseño iterativo.</p>
+                </div>
+            </div>
+            
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-number">3</div>
+                    <div class="module-title">Programación como Otra Lengua</div>
+                </div>
+                <div class="module-tools">
+                    <span class="tool-tag scratch-tag">🐱 Scratch</span>
+                    <span class="tool-tag microbit-tag">🔌 Micro:bit</span>
+                    <span class="tool-tag">🔀 Transición</span>
+                </div>
+                <div class="module-content">
+                    Transición de <span class="highlight">Scratch</span> a <span class="highlight">Micro:bit</span>. La programación como lenguaje universal para comunicar ideas y resolver problemas del mundo físico.
+                </div>
+                <button class="expand-btn" onclick="toggleModule(3)">Ver detalles</button>
+                <div class="module-details" id="module-3">
+                    <h4>🎯 Objetivos de aprendizaje:</h4>
+                    <ul>
+                        <li>Dominar algoritmos y estructuras de control</li>
+                        <li>Aplicar modularidad en programación</li>
+                        <li>Transición práctica: Scratch → Micro:bit</li>
+                        <li>Desarrollar proyectos físicos interactivos</li>
+                    </ul>
+                    <h4>🛠️ Progresión:</h4>
+                    <p>De programación visual (Scratch) a programación física (Micro:bit) para control del mundo real.</p>
+                </div>
+            </div>
+            
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-number">4</div>
+                    <div class="module-title">Transformaciones e Impacto Social</div>
+                </div>
+                <div class="module-tools">
+                    <span class="tool-tag microbit-tag">🔌 Micro:bit</span>
+                    <span class="tool-tag">🌍 Impacto Social</span>
+                    <span class="tool-tag">🤖 IA</span>
+                </div>
+                <div class="module-content">
+                    Ciudadanía digital y pensamiento computacional. <span class="highlight">Micro:bit</span> en proyectos de impacto social. Reflexión sobre inteligencia artificial y desafíos éticos.
+                </div>
+                <button class="expand-btn" onclick="toggleModule(4)">Ver detalles</button>
+                <div class="module-details" id="module-4">
+                    <h4>🎯 Objetivos de aprendizaje:</h4>
+                    <ul>
+                        <li>Reflexionar sobre ciudadanía digital</li>
+                        <li>Analizar el impacto social de la IA</li>
+                        <li>Desarrollar proyectos de impacto social</li>
+                        <li>Evaluar desafíos éticos tecnológicos</li>
+                    </ul>
+                    <h4>🛠️ Aplicaciones:</h4>
+                    <p>Micro:bit para proyectos de educación, accesibilidad, medioambiente y participación ciudadana.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="competencies">
+            <h2>🎯 Competencias del Curso</h2>
+            <div class="competencies-grid">
+                <div class="competency-item">
+                    <h3>🧠 Comprensión</h3>
+                    <p>Comprende qué es el pensamiento computacional, sus características y relaciones con actividades de aula.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>🔍 Análisis</h3>
+                    <p>Identifica, analiza y evalúa posibles proyectos y actividades de aula usando estrategias de pensamiento computacional.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>🚀 Aplicación</h3>
+                    <p>Promueve propuestas didácticas que resuelven problemas reales, fomentan inclusión y trabajo colaborativo.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="schedule-info">
+            <h3>📅 Información del Cronograma</h3>
+            <p>Clases: <span class="highlight">Miércoles y Viernes</span></p>
+            <p>Modalidad: <span class="highlight">Presencial con componente práctico</span></p>
+            <p>Herramientas: <span class="highlight">Scratch → Micro:bit</span></p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleModule(moduleId) {
+            const moduleDetails = document.getElementById(`module-${moduleId}`);
+            const isActive = moduleDetails.classList.contains('active');
+            
+            // Cerrar todos los módulos
+            document.querySelectorAll('.module-details').forEach(detail => {
+                detail.classList.remove('active');
+            });
+            
+            // Abrir el módulo seleccionado si no estaba activo
+            if (!isActive) {
+                moduleDetails.classList.add('active');
+            }
+        }
+        
+        // Animación de entrada para las tarjetas
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.module-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+        
+        // Navegación suave para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDrjLiVhK6iTXsnqFfYM%2Bz0oGPdJkvqReKQs9YfI0vCPWOVshbkWlsdWIHLSqrL8xiDE%2Fajn%2B4SCBxgX%2F3FPvIwLNUGQO1n%2BNdd1yxG%2FE4MLllIIPm6rvYc3OHodagaqhsnRZwqdb8jzjB3k8t8YMmUCwPfBHbUplIcwaleFaFnlM3TBE6xUudANVsHsti0uSihxZ6Z0ewnumFwFaaToU934jFi52f8m%2Fuk%2FKFBdsYg4Ws3F2EMz%2FT7rf7%2B6gLMk0Hvx%2FV1LLk2GpwaBcyBF2UcXZm68HGJbpXFTv78FGTISPzUP6qv2%2BHR%2FRHQrU7GYlFS1elA2XIawpvoSuSAQbFR%2FmyGjVpaCdVFIE4thcgGWbIv28Vdq6i9POByKxehUXljl1NRUaR%2FmD8IH%2FbvzoxIUUkPWBlsO%2FccEO3FHTct2c7NDaVzO5az%2Br%2BZxpoijV1%2Fdw3VlAQAmocbbmNYdatAHRo%2BvXJTwKJO87C9fcJIQWuVePCNuoar4mT2UTSNW6pg%3D%3D";
+        window.__genspark_locale = "es-ES";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDrjLiVhK6iTXsnqFfYM+z0oGPdJkvqReKQs9YfI0vCPWOVshbkWlsdWIHLSqrL8xiDE/ajn+4SCBxgX/3FPvIwLNUGQO1n+Ndd1yxG/E4MLllIIPm6rvYc3OHodagaqhsnRZwqdb8jzjB3k8t8YMmUCwPfBHbUplIcwaleFaFnlM3TBE6xUudANVsHsti0uSihxZ6Z0ewnumFwFaaToU934jFi52f8m/uk/KFBdsYg4Ws3F2EMz/T7rf7+6gLMk0Hvx/V1LLk2GpwaBcyBF2UcXZm68HGJbpXFTv78FGTISPzUP6qv2+HR/RHQrU7GYlFS1elA2XIawpvoSuSAQbFR/myGjVpaCdVFIE4thcgGWbIv28Vdq6i9POByKxehUXljl1NRUaR/mD8IH/bvzoxIUUkPWBlsO/ccEO3FHTct2c7NDaVzO5az+r+ZxpoijV1/dw3VlAQAmocbbmNYdatAHRo+vXJTwKJO87C9fcJIQWuVePCNuoar4mT2UTSNW6pg==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
