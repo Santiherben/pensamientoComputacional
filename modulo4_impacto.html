@@ -1,286 +1,417 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 4: Impacto Social - Embebible</title>
+    <title>Módulo 4: Impacto Social</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .iframe-container {
-            max-width: 100%;
-            height: 100vh;
-            overflow-y: auto;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 50%, #C084FC 100%);
+            min-height: 100vh;
         }
         .content-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin: 20px;
-            padding: 30px;
-            min-height: calc(100vh - 40px);
+            backdrop-filter: blur(10px);
         }
-        .module-header {
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        .section-header {
+            background: linear-gradient(135deg, #8B5CF6, #A855F7);
             color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        .section-title {
-            color: #2d3748;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 25px 0 15px 0;
-            border-left: 4px solid #667eea;
-            padding-left: 15px;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
         }
         .highlight-box {
-            background: #f7fafc;
-            border: 2px solid #667eea;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
+            background: linear-gradient(135deg, #F3E8FF, #EDE9FE);
+            border: 2px solid #A855F7;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
         }
-        .microbit-icon {
-            background: #00ed85;
+        .icon-circle {
+            background: linear-gradient(135deg, #8B5CF6, #A855F7);
             color: white;
-            padding: 8px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            display: inline-block;
-            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
         }
-        .social-impact-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        .btn-primary {
+            background: linear-gradient(135deg, #8B5CF6, #A855F7);
             color: white;
-            padding: 20px;
+            padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            margin: 15px 0;
-        }
-        .citizenship-badge {
-            background: #667eea;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            text-decoration: none;
             display: inline-block;
-            margin: 5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
-        .objective-item {
-            background: #edf2f7;
-            border-left: 4px solid #38a169;
-            padding: 15px;
-            margin: 10px 0;
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #7C3AED, #9333EA);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+        }
+        .competency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .competency-card {
+            background: white;
+            border: 2px solid #A855F7;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .competency-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.2);
+        }
+        .methodology-item {
+            background: linear-gradient(135deg, #F9FAFB, #F3F4F6);
+            border-left: 4px solid #A855F7;
+            padding: 1rem;
+            margin: 1rem 0;
             border-radius: 0 8px 8px 0;
         }
-        .tech-tool {
-            background: #2d3748;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 6px;
-            display: inline-block;
-            margin: 5px;
-            font-weight: 600;
-        }
-        .reflection-box {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border: 2px solid #f6ad55;
+        .nav-breadcrumb {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
         }
     </style>
 </head>
-<body>
-    <div class="iframe-container">
-        <div class="content-card">
-            <div class="module-header">
-                <h1 class="text-2xl font-bold mb-2">
-                    <i class="fas fa-globe-americas mr-3"></i>
-                    Módulo 4: Transformaciones e Impacto Social
-                </h1>
-                <p class="text-lg opacity-90">Tecnología Digital y Pensamiento Computacional</p>
+<body class="min-h-screen p-4">
+    <div class="container mx-auto max-w-4xl">
+        <!-- Navegación -->
+        <div class="nav-breadcrumb">
+            <a href="./index.html" class="btn-primary">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Volver al Mapa de Ruta
+            </a>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="content-card p-8">
+            <div class="section-header text-center">
+                <div class="icon-circle">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h1 class="text-3xl font-bold mb-2">Módulo 4: Impacto Social</h1>
+                <p class="text-lg opacity-90">Ciudadanía Digital y Proyectos de Transformación Social</p>
             </div>
 
+            <!-- Introducción Pedagógica -->
             <div class="highlight-box">
-                <h2 class="text-xl font-bold text-gray-800 mb-3">
-                    <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
-                    Potencial de la Programación para el Cambio Social
+                <h2 class="text-2xl font-bold text-purple-800 mb-4">
+                    <i class="fas fa-chalkboard-teacher mr-2"></i>
+                    Enfoque Pedagógico para Docentes
                 </h2>
-                <p class="text-gray-700 leading-relaxed">
-                    La programación y el pensamiento computacional, especialmente con dispositivos como 
-                    <span class="microbit-icon"><i class="fas fa-microchip"></i></span> 
-                    <strong>Micro:bit</strong>, nos permiten enfrentar desafíos sociales y éticos de manera innovadora.
+                <p class="text-gray-700 mb-4">
+                    Este módulo está diseñado para que ustedes, futuros y futuras maestras y maestros de Uruguay, 
+                    desarrollen competencias para formar ciudadanos digitales responsables y críticos. 
+                    Aprenderán a integrar proyectos de impacto social usando tecnología en sus futuras aulas.
                 </p>
-            </div>
-
-            <div class="section-title">
-                <i class="fas fa-users mr-2"></i>
-                Ciudadanía Digital
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div class="objective-item">
-                    <h3 class="font-bold text-gray-800 mb-2">
-                        <i class="fas fa-shield-alt text-blue-600 mr-2"></i>
-                        Derechos Digitales
-                    </h3>
-                    <p class="text-gray-700">Privacidad, acceso equitativo, libertad de expresión en línea</p>
-                </div>
-                <div class="objective-item">
-                    <h3 class="font-bold text-gray-800 mb-2">
-                        <i class="fas fa-handshake text-green-600 mr-2"></i>
-                        Responsabilidades
-                    </h3>
-                    <p class="text-gray-700">Uso ético, respeto digital, participación constructiva</p>
+                <div class="bg-purple-100 p-4 rounded-lg">
+                    <strong class="text-purple-800">Objetivo Central:</strong> Desarrollar en los docentes las competencias 
+                    necesarias para enseñar ciudadanía digital y liderar proyectos de transformación social con tecnología.
                 </div>
             </div>
 
-            <div class="citizenship-badge">Participación Ciudadana</div>
-            <div class="citizenship-badge">Ética Digital</div>
-            <div class="citizenship-badge">Inclusión Tecnológica</div>
-            <div class="citizenship-badge">Sostenibilidad</div>
-
-            <div class="section-title">
-                <i class="fas fa-microchip mr-2"></i>
-                Micro:bit en Proyectos de Impacto Social
+            <!-- Competencias Docentes -->
+            <div class="section-header">
+                <h2 class="text-2xl font-bold">
+                    <i class="fas fa-graduation-cap mr-2"></i>
+                    Competencias Docentes a Desarrollar
+                </h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="social-impact-card">
-                    <h3 class="font-bold text-lg mb-2">
-                        <i class="fas fa-graduation-cap mr-2"></i>
-                        Educación
-                    </h3>
-                    <p>Herramientas interactivas para aprendizaje inclusivo y accesible</p>
+            <div class="competency-grid">
+                <div class="competency-card">
+                    <div class="icon-circle">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-purple-800 mb-3">Ciudadanía Digital</h3>
+                    <p class="text-gray-700 mb-4">
+                        Capacidad para enseñar derechos digitales, privacidad, seguridad online 
+                        y participación ciudadana responsable.
+                    </p>
+                    <div class="methodology-item">
+                        <strong>Estrategias:</strong> Debates, análisis de casos, simulaciones de situaciones digitales
+                    </div>
                 </div>
-                <div class="social-impact-card">
-                    <h3 class="font-bold text-lg mb-2">
+
+                <div class="competency-card">
+                    <div class="icon-circle">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-purple-800 mb-3">Proyectos de Impacto</h3>
+                    <p class="text-gray-700 mb-4">
+                        Habilidad para diseñar y liderar proyectos que aborden problemáticas 
+                        sociales locales usando Micro:bit y tecnología.
+                    </p>
+                    <div class="methodology-item">
+                        <strong>Aplicaciones:</strong> Monitoreo ambiental, accesibilidad, participación comunitaria
+                    </div>
+                </div>
+
+                <div class="competency-card">
+                    <div class="icon-circle">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-purple-800 mb-3">Ética Digital</h3>
+                    <p class="text-gray-700 mb-4">
+                        Competencia para facilitar reflexiones sobre dilemas éticos 
+                        en inteligencia artificial y tecnologías emergentes.
+                    </p>
+                    <div class="methodology-item">
+                        <strong>Herramientas:</strong> Dilemas éticos, estudios de caso, debates estructurados
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido Central -->
+            <div class="section-header mt-8">
+                <h2 class="text-2xl font-bold">
+                    <i class="fas fa-microchip mr-2"></i>
+                    Micro:bit para el Cambio Social
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-purple-50 p-6 rounded-lg border-2 border-purple-200">
+                    <h3 class="text-xl font-bold text-purple-800 mb-4">
+                        <i class="fas fa-seedling mr-2"></i>
+                        Proyectos Ambientales
+                    </h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li><i class="fas fa-check-circle text-purple-600 mr-2"></i>Monitoreo de calidad del aire</li>
+                        <li><i class="fas fa-check-circle text-purple-600 mr-2"></i>Sensores de humedad en huertos escolares</li>
+                        <li><i class="fas fa-check-circle text-purple-600 mr-2"></i>Medición de niveles de ruido urbano</li>
+                        <li><i class="fas fa-check-circle text-purple-600 mr-2"></i>Sistemas de riego inteligente</li>
+                    </ul>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-lg border-2 border-purple-200">
+                    <h3 class="text-xl font-bold text-purple-800 mb-4">
                         <i class="fas fa-universal-access mr-2"></i>
-                        Accesibilidad
+                        Accesibilidad e Inclusión
                     </h3>
-                    <p>Dispositivos adaptativos para personas con discapacidades</p>
-                </div>
-                <div class="social-impact-card">
-                    <h3 class="font-bold text-lg mb-2">
-                        <i class="fas fa-leaf mr-2"></i>
-                        Medio Ambiente
-                    </h3>
-                    <p>Sensores ambientales y sistemas de monitoreo ecológico</p>
-                </div>
-                <div class="social-impact-card">
-                    <h3 class="font-bold text-lg mb-2">
-                        <i class="fas fa-vote-yea mr-2"></i>
-                        Participación Ciudadana
-                    </h3>
-                    <p>Sistemas de votación, encuestas y participación comunitaria</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li><i class="fas fa-check-circle text-purple-600 mr-2"></i>Dispositivos de asistencia para personas con discapacidad</li>
+                        <li><i class="fas fa-check-circle text-purple-600 mr-2"></i>Sistemas de navegación para espacios escolares</li>
+                        <li><i class="fas fa-check-circle text-purple-600 mr-2"></i>Comunicadores alternativos</li>
+                        <li><i class="fas fa-check-circle text-purple-600 mr-2"></i>Juegos inclusivos programables</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="section-title">
-                <i class="fas fa-robot mr-2"></i>
-                Inteligencia Artificial y Sociedad
-            </div>
-
+            <!-- Ciudadanía Digital -->
             <div class="highlight-box">
-                <h3 class="font-bold text-gray-800 mb-3">Desafíos Éticos y Sociales</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="text-center">
-                        <i class="fas fa-balance-scale text-3xl text-blue-600 mb-2"></i>
-                        <p class="font-semibold">Sesgos Algorítmicos</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-briefcase text-3xl text-orange-600 mb-2"></i>
-                        <p class="font-semibold">Futuro del Trabajo</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-eye text-3xl text-red-600 mb-2"></i>
-                        <p class="font-semibold">Privacidad de Datos</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-title">
-                <i class="fas fa-cogs mr-2"></i>
-                Herramientas del Módulo
-            </div>
-
-            <div class="tech-tool">
-                <i class="fas fa-microchip mr-2"></i>
-                Micro:bit
-            </div>
-            <div class="tech-tool">
-                <i class="fas fa-code mr-2"></i>
-                MakeCode
-            </div>
-            <div class="tech-tool">
-                <i class="fas fa-project-diagram mr-2"></i>
-                Proyectos Sociales
-            </div>
-            <div class="tech-tool">
-                <i class="fas fa-users mr-2"></i>
-                Trabajo Colaborativo
-            </div>
-
-            <div class="reflection-box">
-                <h3 class="font-bold text-gray-800 mb-3 text-lg">
-                    <i class="fas fa-question-circle mr-2"></i>
-                    Reflexión Final
+                <h3 class="text-2xl font-bold text-purple-800 mb-4">
+                    <i class="fas fa-users mr-2"></i>
+                    Formando Ciudadanos Digitales Responsables
                 </h3>
-                <p class="text-gray-700 font-medium text-center">
-                    "¿Cómo puede la programación potenciar agentes de cambio social?"
-                </p>
-                <div class="mt-4 text-center">
-                    <div class="inline-block bg-white bg-opacity-50 px-4 py-2 rounded-lg">
-                        <i class="fas fa-arrow-right mr-2"></i>
-                        <span class="font-semibold">Programación → Soluciones Innovadoras → Impacto Social</span>
+                
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="text-center">
+                        <div class="icon-circle">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4 class="font-bold text-purple-800">Privacidad</h4>
+                        <p class="text-sm text-gray-700">Protección de datos personales y digitales</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="icon-circle">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="font-bold text-purple-800">Respeto Digital</h4>
+                        <p class="text-sm text-gray-700">Convivencia ética en espacios virtuales</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="icon-circle">
+                            <i class="fas fa-vote-yea"></i>
+                        </div>
+                        <h4 class="font-bold text-purple-800">Participación</h4>
+                        <p class="text-sm text-gray-700">Involucramiento ciudadano usando tecnología</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg border-2 border-purple-200">
+                    <h4 class="font-bold text-purple-800 mb-2">Estrategias Pedagógicas para el Aula:</h4>
+                    <ul class="text-gray-700 space-y-1">
+                        <li>• Análisis crítico de redes sociales y medios digitales</li>
+                        <li>• Simulaciones de situaciones de ciberbullying y sus soluciones</li>
+                        <li>• Proyectos de investigación sobre el impacto de la tecnología en la comunidad</li>
+                        <li>• Creación de códigos de convivencia digital para la escuela</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Inteligencia Artificial y Ética -->
+            <div class="section-header mt-8">
+                <h2 class="text-2xl font-bold">
+                    <i class="fas fa-robot mr-2"></i>
+                    Inteligencia Artificial y Desafíos Éticos
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="methodology-item">
+                    <h4 class="font-bold text-purple-800 mb-2">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        Desafíos Éticos
+                    </h4>
+                    <ul class="text-gray-700 space-y-1">
+                        <li>• Sesgo algorítmico y discriminación</li>
+                        <li>• Privacidad y vigilancia masiva</li>
+                        <li>• Automatización y empleo</li>
+                        <li>• Transparencia en decisiones algorítmicas</li>
+                    </ul>
+                </div>
+
+                <div class="methodology-item">
+                    <h4 class="font-bold text-purple-800 mb-2">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Actividades para el Aula
+                    </h4>
+                    <ul class="text-gray-700 space-y-1">
+                        <li>• Debates sobre IA y toma de decisiones</li>
+                        <li>• Análisis de casos reales de sesgo algorítmico</li>
+                        <li>• Creación de principios éticos para IA</li>
+                        <li>• Investigación sobre IA en Uruguay</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Metodología de Implementación -->
+            <div class="section-header mt-8">
+                <h2 class="text-2xl font-bold">
+                    <i class="fas fa-cogs mr-2"></i>
+                    Metodología de Implementación en el Aula
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="methodology-item">
+                    <h4 class="font-bold text-purple-800 mb-2">1. Diagnóstico Comunitario</h4>
+                    <p class="text-gray-700">
+                        Identificar problemáticas locales que puedan ser abordadas con tecnología. 
+                        Involucrar a la comunidad educativa en la definición de necesidades.
+                    </p>
+                </div>
+
+                <div class="methodology-item">
+                    <h4 class="font-bold text-purple-800 mb-2">2. Diseño Participativo</h4>
+                    <p class="text-gray-700">
+                        Planificar soluciones tecnológicas de forma colaborativa, considerando 
+                        las voces de todos los actores involucrados.
+                    </p>
+                </div>
+
+                <div class="methodology-item">
+                    <h4 class="font-bold text-purple-800 mb-2">3. Prototipado y Testeo</h4>
+                    <p class="text-gray-700">
+                        Desarrollar prototipos con Micro:bit, probar en contextos reales y 
+                        iterar basándose en la retroalimentación.
+                    </p>
+                </div>
+
+                <div class="methodology-item">
+                    <h4 class="font-bold text-purple-800 mb-2">4. Evaluación de Impacto</h4>
+                    <p class="text-gray-700">
+                        Medir el impacto social de los proyectos y reflexionar sobre las 
+                        lecciones aprendidas para futuras implementaciones.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Reflexión Final -->
+            <div class="highlight-box mt-8">
+                <h3 class="text-2xl font-bold text-purple-800 mb-4">
+                    <i class="fas fa-lightbulb mr-2"></i>
+                    Reflexión Docente
+                </h3>
+                <div class="bg-white p-6 rounded-lg border-2 border-purple-200">
+                    <p class="text-lg text-gray-700 mb-4 italic">
+                        "¿Cómo podemos usar la tecnología para empoderar a nuestros estudiantes 
+                        como agentes de cambio social en sus comunidades?"
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Como futuras maestras y maestros, tienen el poder de transformar la educación 
+                        tecnológica en una herramienta para el bien común. Este módulo les brinda 
+                        las competencias para guiar a sus estudiantes en el desarrollo de soluciones 
+                        innovadoras para problemas reales.
+                    </p>
+                    <div class="text-center mt-4">
+                        <p class="text-purple-800 font-bold">
+                            "La tecnología es mejor cuando une a las personas" - Matt Mullenweg
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div class="section-title">
-                <i class="fas fa-target mr-2"></i>
-                Objetivos de Aprendizaje
+            <!-- Recursos Adicionales -->
+            <div class="section-header mt-8">
+                <h2 class="text-2xl font-bold">
+                    <i class="fas fa-book-open mr-2"></i>
+                    Recursos para el Docente
+                </h2>
             </div>
 
-            <div class="objective-item">
-                <strong>Analizar</strong> el impacto de la tecnología digital en la sociedad actual
-            </div>
-            <div class="objective-item">
-                <strong>Desarrollar</strong> proyectos con Micro:bit que aborden problemas sociales
-            </div>
-            <div class="objective-item">
-                <strong>Reflexionar</strong> sobre la ética en el uso de tecnologías emergentes
-            </div>
-            <div class="objective-item">
-                <strong>Promover</strong> la ciudadanía digital responsable y participativa
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-purple-800 mb-3">
+                        <i class="fas fa-tools mr-2"></i>
+                        Herramientas Tecnológicas
+                    </h4>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>• Micro:bit y MakeCode</li>
+                        <li>• Plataformas de colaboración online</li>
+                        <li>• Simuladores de circuitos</li>
+                        <li>• Herramientas de evaluación digital</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-purple-800 mb-3">
+                        <i class="fas fa-clipboard-check mr-2"></i>
+                        Evaluación de Aprendizajes
+                    </h4>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>• Portafolios digitales de proyectos</li>
+                        <li>• Rúbricas de ciudadanía digital</li>
+                        <li>• Autoevaluación de competencias</li>
+                        <li>• Evaluación de impacto social</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="text-center mt-8 p-6 bg-gray-100 rounded-lg">
-                <p class="text-gray-600 font-medium">
-                    <i class="fas fa-heart text-red-500 mr-2"></i>
-                    "La tecnología es mejor cuando une a las personas" - Matt Mullenweg
+            <!-- Navegación Final -->
+            <div class="text-center mt-8 pt-8 border-t-2 border-purple-200">
+                <a href="./index.html" class="btn-primary text-lg px-8 py-3">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Volver al Mapa de Ruta
+                </a>
+                <p class="text-gray-600 mt-4">
+                    ¡Felicitaciones! Has completado el recorrido por los 4 módulos del curso.
                 </p>
             </div>
         </div>
     </div>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDk930jElO1SpglF%2BuEVsyB5C8Ite46CvhLE00M%2BAQ103575F4UkDvUzet%2Bz8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq%2BB%2BMiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj%2BVnczfBQ6pC4h6sP7nUGOXrLS%2BnUjSLOwa4Z%2FdTwFgJpA6fgsHDcwpz%2FnXhdYb1ZLYKIs6pRr3yrQnBfrhjSJrodmsvVUFo%2FG1p%2BMvohc30D2b%2BWMsdQdyTogeT%2Fl%2BKEH8ELE%2BrrQRXbZwfJljMN7gQ0tlp96g2zKxI3I0UtUUa85e1iPomZXwXS2EHBAjRvplQf6TAu0rVIlpMn4pUFopSOLhZ5EyqfHYHTmWUVlpUPBGg1UzpmC0hO95OGbUmqAy4v4KQDQ0RAnb3IoXexQ8W%2F2EIHgmF1wcGmTWdyvCFqo9Jgc3IMNG%2FnNUpCwX4pLjI0%2FV2%2BHcpeleODbA5xBYdRMLHHXH2fJH7Izb48YRpIan4cgefAnUok0%2FAujIneP8S6ZNMZU95FyF1tLV37J";
-        window.__genspark_locale = "es-ES";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDk930jElO1SpglF+uEVsyB5C8Ite46CvhLE00M+AQ103575F4UkDvUzet+z8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq+B+MiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj+VnczfBQ6pC4h6sP7nUGOXrLS+nUjSLOwa4Z/dTwFgJpA6fgsHDcwpz/nXhdYb1ZLYKIs6pRr3yrQnBfrhjSJrodmsvVUFo/G1p+Mvohc30D2b+WMsdQdyTogeT/l+KEH8ELE+rrQRXbZwfJljMN7gQ0tlp96g2zKxI3I0UtUUa85e1iPomZXwXS2EHBAjRvplQf6TAu0rVIlpMn4pUFopSOLhZ5EyqfHYHTmWUVlpUPBGg1UzpmC0hO95OGbUmqAy4v4KQDQ0RAnb3IoXexQ8W/2EIHgmF1wcGmTWdyvCFqo9Jgc3IMNG/nNUpCwX4pLjI0/V2+HcpeleODbA5xBYdRMLHHXH2fJH7Izb48YRpIan4cgefAnUok0/AujIneP8S6ZNMZU95FyF1tLV37J";
-    </script>
-    
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
