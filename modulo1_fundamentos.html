@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,225 +8,291 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            overflow-x: hidden;
+        .modulo-verde {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
         }
-        .iframe-container {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .card-verde {
+            border-top: 4px solid #10B981;
         }
-        .content-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .icon-bg {
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-        }
-        .scratch-icon {
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-        }
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-        }
-        .feature-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
+        .btn-verde {
+            background: #10B981;
             transition: all 0.3s ease;
         }
-        .concept-badge {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        .btn-verde:hover {
+            background: #059669;
+            transform: translateY(-2px);
         }
-        .programming-badge {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        .icon-verde {
+            color: #10B981;
+        }
+        .text-verde {
+            color: #059669;
+        }
+        .bg-verde-light {
+            background: #F0FDF4;
         }
     </style>
 </head>
-<body>
-    <div class="iframe-container">
-        <div class="container mx-auto px-4 py-6">
-            <!-- Header -->
-            <div class="content-card rounded-2xl p-6 mb-6 shadow-2xl">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-4">
-                        <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center text-white">
-                            <i class="fas fa-brain text-2xl"></i>
-                        </div>
-                        <div>
-                            <h1 class="text-3xl font-bold text-gray-800">Módulo 1</h1>
-                            <p class="text-xl text-gray-600">Fundamentos del Pensamiento Computacional</p>
-                        </div>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="modulo-verde text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-white bg-opacity-20 p-3 rounded-full">
+                        <i class="fas fa-puzzle-piece text-2xl"></i>
                     </div>
-                    <div class="scratch-icon w-12 h-12 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-puzzle-piece text-white text-xl"></i>
+                    <div>
+                        <h1 class="text-3xl font-bold">Módulo 1: Fundamentos</h1>
+                        <p class="text-green-100">Pensamiento Computacional para Docentes</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Main Content -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Left Column -->
-                <div class="space-y-6">
-                    <!-- Conceptos Fundamentales -->
-                    <div class="content-card rounded-2xl p-6 shadow-xl">
-                        <div class="flex items-center mb-4">
-                            <div class="concept-badge w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-lightbulb text-white"></i>
-                            </div>
-                            <h2 class="text-xl font-bold text-gray-800">Conceptos Fundamentales</h2>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="feature-card rounded-lg p-4 text-white">
-                                <div class="flex items-center mb-2">
-                                    <i class="fas fa-puzzle-piece mr-2"></i>
-                                    <span class="font-semibold">Descomposición</span>
-                                </div>
-                                <p class="text-sm">Dividir problemas complejos en partes más manejables</p>
-                            </div>
-                            <div class="feature-card rounded-lg p-4 text-white">
-                                <div class="flex items-center mb-2">
-                                    <i class="fas fa-eye mr-2"></i>
-                                    <span class="font-semibold">Reconocimiento de Patrones</span>
-                                </div>
-                                <p class="text-sm">Identificar similitudes y tendencias en datos</p>
-                            </div>
-                            <div class="feature-card rounded-lg p-4 text-white">
-                                <div class="flex items-center mb-2">
-                                    <i class="fas fa-layer-group mr-2"></i>
-                                    <span class="font-semibold">Abstracción</span>
-                                </div>
-                                <p class="text-sm">Enfocarse en lo esencial, ignorar detalles irrelevantes</p>
-                            </div>
-                            <div class="feature-card rounded-lg p-4 text-white">
-                                <div class="flex items-center mb-2">
-                                    <i class="fas fa-list-ol mr-2"></i>
-                                    <span class="font-semibold">Algoritmos</span>
-                                </div>
-                                <p class="text-sm">Secuencias de pasos para resolver problemas</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Scratch Introduction -->
-                    <div class="content-card rounded-2xl p-6 shadow-xl">
-                        <div class="flex items-center mb-4">
-                            <div class="scratch-icon w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-play text-white"></i>
-                            </div>
-                            <h2 class="text-xl font-bold text-gray-800">Introducción a Scratch</h2>
-                        </div>
-                        <div class="space-y-3">
-                            <p class="text-gray-700">
-                                <i class="fas fa-star text-yellow-500 mr-2"></i>
-                                <strong>Puerta de entrada lúdica</strong> y visual a la programación
-                            </p>
-                            <p class="text-gray-700">
-                                <i class="fas fa-gamepad text-green-500 mr-2"></i>
-                                Permite crear <strong>juegos, animaciones e historias</strong> interactivas
-                            </p>
-                            <p class="text-gray-700">
-                                <i class="fas fa-users text-blue-500 mr-2"></i>
-                                Fomenta el <strong>aprendizaje colaborativo</strong> y la creatividad
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column -->
-                <div class="space-y-6">
-                    <!-- Importancia y Aplicaciones -->
-                    <div class="content-card rounded-2xl p-6 shadow-xl">
-                        <div class="flex items-center mb-4">
-                            <div class="programming-badge w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-rocket text-white"></i>
-                            </div>
-                            <h2 class="text-xl font-bold text-gray-800">Potencial de la Programación</h2>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="border-l-4 border-blue-500 pl-4">
-                                <h3 class="font-semibold text-gray-800 mb-2">Autonomía Digital</h3>
-                                <p class="text-gray-600 text-sm">Desarrollar habilidades desde edades tempranas para ser creadores, no solo consumidores de tecnología</p>
-                            </div>
-                            <div class="border-l-4 border-green-500 pl-4">
-                                <h3 class="font-semibold text-gray-800 mb-2">Resolución de Problemas</h3>
-                                <p class="text-gray-600 text-sm">Aplicar lógica computacional para analizar y resolver desafíos de la vida real</p>
-                            </div>
-                            <div class="border-l-4 border-purple-500 pl-4">
-                                <h3 class="font-semibold text-gray-800 mb-2">Creatividad e Innovación</h3>
-                                <p class="text-gray-600 text-sm">Combinar arte, ciencia y tecnología para crear soluciones originales</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Aplicaciones en el Aula -->
-                    <div class="content-card rounded-2xl p-6 shadow-xl">
-                        <div class="flex items-center mb-4">
-                            <div class="icon-bg w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-chalkboard-teacher text-white"></i>
-                            </div>
-                            <h2 class="text-xl font-bold text-gray-800">Aplicaciones en el Aula</h2>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="feature-card rounded-lg p-4 text-white">
-                                <div class="flex items-center mb-2">
-                                    <i class="fas fa-book mr-2"></i>
-                                    <span class="font-semibold">Interdisciplinario</span>
-                                </div>
-                                <p class="text-sm">Integración con matemáticas, ciencias, arte y lenguaje</p>
-                            </div>
-                            <div class="feature-card rounded-lg p-4 text-white">
-                                <div class="flex items-center mb-2">
-                                    <i class="fas fa-hands-helping mr-2"></i>
-                                    <span class="font-semibold">Colaborativo</span>
-                                </div>
-                                <p class="text-sm">Proyectos en equipo que desarrollan habilidades sociales</p>
-                            </div>
-                            <div class="feature-card rounded-lg p-4 text-white">
-                                <div class="flex items-center mb-2">
-                                    <i class="fas fa-graduation-cap mr-2"></i>
-                                    <span class="font-semibold">Ciudadanía Digital</span>
-                                </div>
-                                <p class="text-sm">Formación de ciudadanos críticos y responsables</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer -->
-            <div class="content-card rounded-2xl p-4 mt-6 shadow-xl">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-4">
-                        <div class="scratch-icon w-8 h-8 rounded-full flex items-center justify-center">
-                            <i class="fas fa-code text-white text-sm"></i>
-                        </div>
-                        <p class="text-gray-600 text-sm">
-                            <strong>Próximo paso:</strong> Aplicar estos fundamentos en proyectos prácticos con Scratch
-                        </p>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-xs text-gray-500">Módulo 1 de 4</span>
-                        <div class="w-16 h-2 bg-gray-200 rounded-full">
-                            <div class="w-4 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
-                        </div>
-                    </div>
-                </div>
+                <a href="./index.html" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition duration-300 flex items-center space-x-2">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Volver al Mapa de Ruta</span>
+                </a>
             </div>
         </div>
-    </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Introducción -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8 card-verde">
+            <div class="text-center mb-6">
+                <div class="inline-block bg-verde-light p-4 rounded-full mb-4">
+                    <i class="fas fa-chalkboard-teacher text-4xl icon-verde"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Desarrollando Competencias Docentes</h2>
+                <p class="text-lg text-gray-600">Este módulo está diseñado para que futuros y futuras maestras y maestros de Uruguay desarrollen competencias sólidas en pensamiento computacional que puedan replicar en sus prácticas pedagógicas.</p>
+            </div>
+        </section>
+
+        <!-- Objetivos Pedagógicos -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8 card-verde">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-target icon-verde mr-3"></i>
+                Objetivos Pedagógicos
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-verde-light p-6 rounded-lg">
+                    <h3 class="font-bold text-lg mb-3 text-verde">Como Docente en Formación</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-check-circle icon-verde mr-2 mt-1"></i>Comprender los fundamentos del pensamiento computacional</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle icon-verde mr-2 mt-1"></i>Desarrollar habilidades para diseñar actividades educativas</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle icon-verde mr-2 mt-1"></i>Adquirir competencias para evaluar el aprendizaje</li>
+                    </ul>
+                </div>
+                <div class="bg-verde-light p-6 rounded-lg">
+                    <h3 class="font-bold text-lg mb-3 text-verde">Para Replicar en el Aula</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-check-circle icon-verde mr-2 mt-1"></i>Planificar secuencias didácticas efectivas</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle icon-verde mr-2 mt-1"></i>Adaptar contenidos a diferentes edades</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle icon-verde mr-2 mt-1"></i>Integrar tecnología de forma pedagógica</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Los 4 Pilares -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8 card-verde">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-columns icon-verde mr-3"></i>
+                Los 4 Pilares del Pensamiento Computacional
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border-l-4 border-green-500 pl-6">
+                    <h3 class="text-xl font-bold text-verde mb-3">
+                        <i class="fas fa-puzzle-piece mr-2"></i>Descomposición
+                    </h3>
+                    <p class="text-gray-700 mb-3">Dividir problemas complejos en partes más pequeñas y manejables.</p>
+                    <div class="bg-verde-light p-4 rounded-lg">
+                        <h4 class="font-semibold text-verde mb-2">Estrategia Pedagógica:</h4>
+                        <p class="text-sm text-gray-600">Enseñar a los estudiantes a dividir proyectos grandes en tareas pequeñas usando organizadores gráficos y mapas mentales.</p>
+                    </div>
+                </div>
+                
+                <div class="border-l-4 border-green-500 pl-6">
+                    <h3 class="text-xl font-bold text-verde mb-3">
+                        <i class="fas fa-search mr-2"></i>Reconocimiento de Patrones
+                    </h3>
+                    <p class="text-gray-700 mb-3">Identificar similitudes y tendencias en datos y problemas.</p>
+                    <div class="bg-verde-light p-4 rounded-lg">
+                        <h4 class="font-semibold text-verde mb-2">Estrategia Pedagógica:</h4>
+                        <p class="text-sm text-gray-600">Utilizar juegos de clasificación, secuencias y actividades de comparación para desarrollar esta habilidad.</p>
+                    </div>
+                </div>
+                
+                <div class="border-l-4 border-green-500 pl-6">
+                    <h3 class="text-xl font-bold text-verde mb-3">
+                        <i class="fas fa-eye mr-2"></i>Abstracción
+                    </h3>
+                    <p class="text-gray-700 mb-3">Enfocarse en lo esencial, ignorando detalles irrelevantes.</p>
+                    <div class="bg-verde-light p-4 rounded-lg">
+                        <h4 class="font-semibold text-verde mb-2">Estrategia Pedagógica:</h4>
+                        <p class="text-sm text-gray-600">Crear modelos simples de situaciones complejas y usar analogías para explicar conceptos abstractos.</p>
+                    </div>
+                </div>
+                
+                <div class="border-l-4 border-green-500 pl-6">
+                    <h3 class="text-xl font-bold text-verde mb-3">
+                        <i class="fas fa-list-ol mr-2"></i>Algoritmos
+                    </h3>
+                    <p class="text-gray-700 mb-3">Crear secuencias de pasos claros para resolver problemas.</p>
+                    <div class="bg-verde-light p-4 rounded-lg">
+                        <h4 class="font-semibold text-verde mb-2">Estrategia Pedagógica:</h4>
+                        <p class="text-sm text-gray-600">Diseñar actividades de secuenciación usando recetas, instrucciones y rutinas diarias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scratch como Herramienta Pedagógica -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8 card-verde">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-cat icon-verde mr-3"></i>
+                Scratch como Herramienta Pedagógica
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="bg-verde-light p-6 rounded-lg mb-4">
+                        <i class="fas fa-gamepad text-4xl icon-verde mb-4"></i>
+                        <h3 class="font-bold text-lg text-verde mb-2">Aprendizaje Lúdico</h3>
+                        <p class="text-gray-600">Permite crear juegos y animaciones que motivan el aprendizaje.</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-verde-light p-6 rounded-lg mb-4">
+                        <i class="fas fa-users text-4xl icon-verde mb-4"></i>
+                        <h3 class="font-bold text-lg text-verde mb-2">Colaboración</h3>
+                        <p class="text-gray-600">Fomenta el trabajo en equipo y la revisión por pares.</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-verde-light p-6 rounded-lg mb-4">
+                        <i class="fas fa-lightbulb text-4xl icon-verde mb-4"></i>
+                        <h3 class="font-bold text-lg text-verde mb-2">Creatividad</h3>
+                        <p class="text-gray-600">Permite expresar ideas de forma visual e interactiva.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competencias Docentes -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8 card-verde">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-graduation-cap icon-verde mr-3"></i>
+                Competencias Docentes a Desarrollar
+            </h2>
+            <div class="space-y-6">
+                <div class="border-l-4 border-green-500 pl-6">
+                    <h3 class="text-xl font-bold text-verde mb-2">Planificación Didáctica</h3>
+                    <p class="text-gray-700 mb-3">Diseñar secuencias de aprendizaje que integren pensamiento computacional con contenidos curriculares.</p>
+                    <div class="bg-verde-light p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Actividades Sugeridas:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Crear rúbricas de evaluación para proyectos de Scratch</li>
+                            <li>• Diseñar actividades desenchufadas complementarias</li>
+                            <li>• Planificar progresiones de dificultad adecuadas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-l-4 border-green-500 pl-6">
+                    <h3 class="text-xl font-bold text-verde mb-2">Evaluación Formativa</h3>
+                    <p class="text-gray-700 mb-3">Desarrollar estrategias para evaluar el proceso de aprendizaje, no solo el producto final.</p>
+                    <div class="bg-verde-light p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Herramientas de Evaluación:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Portfolios digitales de proyectos</li>
+                            <li>• Observación directa durante el proceso</li>
+                            <li>• Autoevaluación y coevaluación entre estudiantes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-l-4 border-green-500 pl-6">
+                    <h3 class="text-xl font-bold text-verde mb-2">Adaptación Curricular</h3>
+                    <p class="text-gray-700 mb-3">Integrar pensamiento computacional en diferentes áreas del conocimiento.</p>
+                    <div class="bg-verde-light p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Áreas de Integración:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Matemáticas: Patrones numéricos y geometría</li>
+                            <li>• Lenguaje: Narrativas interactivas y storytelling</li>
+                            <li>• Ciencias: Simulaciones y modelos científicos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recursos para Docentes -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8 card-verde">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-toolbox icon-verde mr-3"></i>
+                Recursos para Implementar en el Aula
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-verde-light p-6 rounded-lg">
+                    <h3 class="font-bold text-lg text-verde mb-4">Actividades Iniciales</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-play-circle icon-verde mr-2 mt-1"></i>Exploración libre de Scratch</li>
+                        <li class="flex items-start"><i class="fas fa-play-circle icon-verde mr-2 mt-1"></i>Creación de sprites y fondos</li>
+                        <li class="flex items-start"><i class="fas fa-play-circle icon-verde mr-2 mt-1"></i>Animaciones simples</li>
+                        <li class="flex items-start"><i class="fas fa-play-circle icon-verde mr-2 mt-1"></i>Proyectos de presentación personal</li>
+                    </ul>
+                </div>
+                <div class="bg-verde-light p-6 rounded-lg">
+                    <h3 class="font-bold text-lg text-verde mb-4">Actividades Avanzadas</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-rocket icon-verde mr-2 mt-1"></i>Juegos interactivos</li>
+                        <li class="flex items-start"><i class="fas fa-rocket icon-verde mr-2 mt-1"></i>Historias ramificadas</li>
+                        <li class="flex items-start"><i class="fas fa-rocket icon-verde mr-2 mt-1"></i>Simulaciones educativas</li>
+                        <li class="flex items-start"><i class="fas fa-rocket icon-verde mr-2 mt-1"></i>Proyectos colaborativos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reflexión Pedagógica -->
+        <section class="bg-verde-light rounded-lg p-8 mb-8 border-l-4 border-green-500">
+            <h2 class="text-2xl font-bold text-verde mb-4 flex items-center">
+                <i class="fas fa-lightbulb mr-3"></i>
+                Reflexión Pedagógica
+            </h2>
+            <div class="bg-white p-6 rounded-lg">
+                <h3 class="font-bold text-lg text-gray-800 mb-4">Preguntas para la Reflexión Docente:</h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start"><i class="fas fa-question-circle text-verde mr-2 mt-1"></i>¿Cómo puedo adaptar estas actividades a las necesidades de mis futuros estudiantes?</li>
+                    <li class="flex items-start"><i class="fas fa-question-circle text-verde mr-2 mt-1"></i>¿Qué recursos necesito para implementar estas estrategias en mi aula?</li>
+                    <li class="flex items-start"><i class="fas fa-question-circle text-verde mr-2 mt-1"></i>¿Cómo evaluaré el desarrollo del pensamiento computacional en mis estudiantes?</li>
+                    <li class="flex items-start"><i class="fas fa-question-circle text-verde mr-2 mt-1"></i>¿Qué desafíos preveo y cómo los abordaré?</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Próximos Pasos -->
+        <section class="bg-white rounded-lg shadow-md p-8 card-verde">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-arrow-right icon-verde mr-3"></i>
+                Próximos Pasos
+            </h2>
+            <div class="text-center">
+                <p class="text-lg text-gray-700 mb-6">Con estos fundamentos sólidos, estarás preparado/a para avanzar al siguiente módulo donde profundizaremos en estrategias específicas de resolución de problemas.</p>
+                <div class="bg-verde-light p-4 rounded-lg">
+                    <p class="text-verde font-semibold">Módulo 2: Resolución de Problemas</p>
+                    <p class="text-gray-600">Estrategias conectadas y desenchufadas para desarrollar el pensamiento lógico</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="modulo-verde text-white py-6 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">Curso de Pensamiento Computacional para Docentes</p>
+            <p class="text-green-100">Dirigido a futuros y futuras maestras y maestros de Uruguay</p>
+        </div>
+    </footer>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDk930jElO1SpglF%2BuEVsyB5C8Ite46CvhLE00M%2BAQ103575F4UkDvUzet%2Bz8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq%2BB%2BMiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj%2BVnczfBQ6pC4h6sP7nUGOXrLS%2BnUjSLOwa4Z%2FdTwFgJpA6fgsHDcwpz%2FnXhdYb1bF7sMO3sD10a4cIoOF7cm4q%2BeTSx8t%2F%2BRaRmu7F3RFrJpq%2FZY33JnVmjSgakuMhfswdzMs6cD%2F78KbX9uKQSKr36gRH05ek3K8hq8L4x1OqA6%2FJqVGg74YlnRTQDKw8NJONajEMpdJTutAu81Sj8GeuLMiHZhBL5NGLcKdTAwsXHd9JKnqksOocL2%2Fsb%2F91NDQomZZRJP4C%2BAFGfxcpE3fR4kJaQafoFAdLpUH8A3noVMS0poM4F7y1nzqsVD1YcSXgehMkzRWWZV%2BfoFlaUVJblSqkKCr1KRG8P1JIQqQSF51kp1iWGlYIqPGtHGR0jMq7CDT10MabOhqFR63GZluGexGUSkbSI7sGSeEFbzMcA%3D%3D";
-        window.__genspark_locale = "es-ES";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDk930jElO1SpglF+uEVsyB5C8Ite46CvhLE00M+AQ103575F4UkDvUzet+z8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq+B+MiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj+VnczfBQ6pC4h6sP7nUGOXrLS+nUjSLOwa4Z/dTwFgJpA6fgsHDcwpz/nXhdYb1bF7sMO3sD10a4cIoOF7cm4q+eTSx8t/+RaRmu7F3RFrJpq/ZY33JnVmjSgakuMhfswdzMs6cD/78KbX9uKQSKr36gRH05ek3K8hq8L4x1OqA6/JqVGg74YlnRTQDKw8NJONajEMpdJTutAu81Sj8GeuLMiHZhBL5NGLcKdTAwsXHd9JKnqksOocL2/sb/91NDQomZZRJP4C+AFGfxcpE3fR4kJaQafoFAdLpUH8A3noVMS0poM4F7y1nzqsVD1YcSXgehMkzRWWZV+foFlaUVJblSqkKCr1KRG8P1JIQqQSF51kp1iWGlYIqPGtHGR0jMq7CDT10MabOhqFR63GZluGexGUSkbSI7sGSeEFbzMcA==";
-    </script>
-    
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
