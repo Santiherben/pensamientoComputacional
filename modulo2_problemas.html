@@ -8,344 +8,264 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 50%, #ef4444 100%);
             min-height: 100vh;
-            overflow-x: hidden;
         }
-        
-        .iframe-container {
-            max-width: 100%;
-            margin: 0;
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-        
         .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        .red-accent {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+        .icon-red {
+            color: #dc2626;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+        }
+        .section-card {
             background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin: 0 auto;
-            max-width: 900px;
-        }
-        
-        .module-header {
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .strategy-card {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .strategy-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-color: #4f46e5;
-        }
-        
-        .icon-container {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-            color: white;
-        }
-        
-        .scratch-highlight {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            display: inline-block;
-            margin: 0.5rem 0;
-            font-weight: bold;
-        }
-        
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .methodology-section {
-            background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-left: 5px solid #0288d1;
-        }
-        
-        .key-points {
-            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-left: 5px solid #8e24aa;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 30%);
-            border: 2px solid #ff9800;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            position: relative;
-        }
-        
-        .highlight-box::before {
-            content: "💡";
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            background: #ff9800;
-            color: white;
-            padding: 0.5rem;
-            border-radius: 50%;
-            font-size: 1.2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .iframe-container {
-                padding: 0.5rem;
-            }
-            
-            .content-card {
-                padding: 1rem;
-            }
-            
-            .strategy-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .module-header {
-                padding: 1rem;
-            }
-        }
-        
-        .bullet-point {
-            display: flex;
-            align-items: flex-start;
-            margin: 1rem 0;
-        }
-        
-        .bullet-point .icon {
-            color: #4f46e5;
-            margin-right: 1rem;
-            margin-top: 0.2rem;
-            font-size: 1.2rem;
+            border-left: 4px solid #ef4444;
         }
     </style>
 </head>
-<body>
-    <div class="iframe-container">
-        <div class="content-card">
-            <!-- Module Header -->
-            <div class="module-header">
-                <h1 class="text-3xl font-bold mb-2">
-                    <i class="fas fa-puzzle-piece mr-3"></i>
-                    Módulo 2: Resolución de Problemas
-                </h1>
-                <p class="text-lg opacity-90">Potencial de la programación y Scratch</p>
+<body class="font-sans">
+    <div class="min-h-screen py-8 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <a href="./index.html" class="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-300 mb-6">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Volver al Mapa de Ruta
+                </a>
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Módulo 2: Resolución de Problemas</h1>
+                <p class="text-xl text-gray-600">Estrategias Pedagógicas para Docentes Uruguayos</p>
             </div>
 
             <!-- Main Content -->
-            <div class="space-y-6">
-                <!-- Introduction -->
-                <div class="methodology-section">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                        <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+            <div class="content-card rounded-2xl shadow-xl p-8 mb-8">
+                
+                <!-- Introducción -->
+                <div class="section-card rounded-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                        <i class="fas fa-lightbulb icon-red mr-3"></i>
                         Estrategias Efectivas con Pensamiento Computacional
                     </h2>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Este módulo integra <span class="scratch-highlight">Scratch</span> como recurso visual y creativo para desarrollar 
-                        estrategias efectivas de resolución de problemas mediante pensamiento computacional.
+                    <p class="text-gray-700 leading-relaxed">
+                        Este módulo integra Scratch como recurso visual y creativo para desarrollar estrategias efectivas de resolución de problemas mediante pensamiento computacional. Como futuros docentes, desarrollarán competencias para implementar estas metodologías en sus aulas.
                     </p>
                 </div>
 
-                <!-- Strategy Grid -->
-                <div class="strategy-grid">
-                    <!-- Connected Approach -->
-                    <div class="strategy-card">
-                        <div class="icon-container">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Enfoque "Conectado"</h3>
-                        <div class="space-y-2">
-                            <div class="bullet-point">
-                                <i class="fas fa-check-circle icon"></i>
-                                <span>Programación con computadora usando Scratch</span>
-                            </div>
-                            <div class="bullet-point">
-                                <i class="fas fa-check-circle icon"></i>
-                                <span>Visualización de algoritmos en tiempo real</span>
-                            </div>
-                            <div class="bullet-point">
-                                <i class="fas fa-check-circle icon"></i>
-                                <span>Experimentación inmediata con soluciones</span>
-                            </div>
-                            <div class="bullet-point">
-                                <i class="fas fa-check-circle icon"></i>
-                                <span>Debugging y corrección iterativa</span>
-                            </div>
-                        </div>
+                <!-- Enfoques Metodológicos -->
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="section-card rounded-lg p-6 hover-lift transition-all duration-300">
+                        <h3 class="text-xl font-bold text-red-600 mb-3 flex items-center">
+                            <i class="fas fa-laptop-code icon-red mr-2"></i>
+                            Enfoque "Conectado"
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Programación con computadora usando Scratch</li>
+                            <li>• Visualización de algoritmos en tiempo real</li>
+                            <li>• Experimentación inmediata con soluciones</li>
+                            <li>• Debugging y corrección iterativa</li>
+                        </ul>
                     </div>
 
-                    <!-- Unplugged Approach -->
-                    <div class="strategy-card">
-                        <div class="icon-container">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Enfoque "Desenchufado"</h3>
-                        <div class="space-y-2">
-                            <div class="bullet-point">
-                                <i class="fas fa-check-circle icon"></i>
-                                <span>Actividades sin computadora</span>
-                            </div>
-                            <div class="bullet-point">
-                                <i class="fas fa-check-circle icon"></i>
-                                <span>Trabajo colaborativo y en equipo</span>
-                            </div>
-                            <div class="bullet-point">
-                                <i class="fas fa-check-circle icon"></i>
-                                <span>Juegos y dinámicas grupales</span>
-                            </div>
-                            <div class="bullet-point">
-                                <i class="fas fa-check-circle icon"></i>
-                                <span>Pensamiento lógico manual</span>
-                            </div>
-                        </div>
+                    <div class="section-card rounded-lg p-6 hover-lift transition-all duration-300">
+                        <h3 class="text-xl font-bold text-red-600 mb-3 flex items-center">
+                            <i class="fas fa-users icon-red mr-2"></i>
+                            Enfoque "Desenchufado"
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Actividades sin computadora</li>
+                            <li>• Trabajo colaborativo y en equipo</li>
+                            <li>• Juegos y dinámicas grupales</li>
+                            <li>• Pensamiento lógico manual</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Scratch Integration -->
-                <div class="key-points">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                        <i class="fas fa-cat text-orange-500 mr-2"></i>
+                <!-- Scratch como Herramienta Central -->
+                <div class="section-card rounded-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                        <i class="fas fa-puzzle-piece icon-red mr-3"></i>
                         Scratch como Herramienta Central
                     </h2>
-                    <div class="space-y-3">
-                        <div class="bullet-point">
-                            <i class="fas fa-eye icon"></i>
-                            <span><strong>Visualización:</strong> Permite ver los algoritmos en acción de forma intuitiva</span>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Visualización</h4>
+                            <p class="text-gray-600 mb-4">Permite ver los algoritmos en acción de forma intuitiva</p>
+                            
+                            <h4 class="font-semibold text-gray-800 mb-2">Exploración</h4>
+                            <p class="text-gray-600">Fomenta la experimentación y el descubrimiento</p>
                         </div>
-                        <div class="bullet-point">
-                            <i class="fas fa-search icon"></i>
-                            <span><strong>Exploración:</strong> Fomenta la experimentación y el descubrimiento</span>
-                        </div>
-                        <div class="bullet-point">
-                            <i class="fas fa-handshake icon"></i>
-                            <span><strong>Colaboración:</strong> Facilita el trabajo en equipo y la revisión por pares</span>
-                        </div>
-                        <div class="bullet-point">
-                            <i class="fas fa-brain icon"></i>
-                            <span><strong>Pensamiento lógico:</strong> Desarrolla secuencias, bucles y condicionales</span>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Colaboración</h4>
+                            <p class="text-gray-600 mb-4">Facilita el trabajo en equipo y la revisión por pares</p>
+                            
+                            <h4 class="font-semibold text-gray-800 mb-2">Pensamiento lógico</h4>
+                            <p class="text-gray-600">Desarrolla secuencias, bucles y condicionales</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Problem Decomposition -->
-                <div class="highlight-box">
-                    <h3 class="text-xl font-bold text-gray-800 mb-3 mt-4">
-                        <i class="fas fa-sitemap mr-2"></i>
+                <!-- Competencias Docentes -->
+                <div class="section-card rounded-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                        <i class="fas fa-chalkboard-teacher icon-red mr-3"></i>
+                        Competencias Docentes a Desarrollar
+                    </h2>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-red-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-2">Planificación</h4>
+                            <p class="text-gray-700 text-sm">Diseñar secuencias didácticas que integren actividades conectadas y desenchufadas</p>
+                        </div>
+                        <div class="bg-red-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-2">Facilitación</h4>
+                            <p class="text-gray-700 text-sm">Guiar el proceso de resolución de problemas sin dar respuestas directas</p>
+                        </div>
+                        <div class="bg-red-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-2">Evaluación</h4>
+                            <p class="text-gray-700 text-sm">Evaluar procesos de pensamiento, no solo resultados finales</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descomposición de Problemas -->
+                <div class="section-card rounded-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                        <i class="fas fa-sitemap icon-red mr-3"></i>
                         Descomposición de Problemas Complejos
-                    </h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        La programación permite <strong>descomponer retos complejos</strong> en partes más pequeñas y manejables. 
-                        Con Scratch, los estudiantes pueden:
+                    </h2>
+                    <p class="text-gray-700 mb-4">
+                        La programación permite <strong>descomponer retos complejos</strong> en partes más pequeñas y manejables. Como docentes, enseñarán a sus estudiantes a:
                     </p>
-                    <ul class="mt-3 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-500 mr-2 mt-1"></i>
-                            <span>Dividir proyectos grandes en sprites y funciones pequeñas</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-500 mr-2 mt-1"></i>
-                            <span>Experimentar con diferentes soluciones de forma segura</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-arrow-right text-blue-500 mr-2 mt-1"></i>
-                            <span>Aprender de los errores a través de la iteración</span>
-                        </li>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Dividir proyectos grandes en sprites y funciones pequeñas</li>
+                        <li>• Experimentar con diferentes soluciones de forma segura</li>
+                        <li>• Aprender de los errores a través de la iteración</li>
+                        <li>• Desarrollar autonomía en la resolución de problemas</li>
                     </ul>
                 </div>
 
-                <!-- Iterative Learning -->
-                <div class="methodology-section">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                        <i class="fas fa-sync-alt text-green-500 mr-2"></i>
+                <!-- Diseño Iterativo -->
+                <div class="section-card rounded-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                        <i class="fas fa-sync-alt icon-red mr-3"></i>
                         Diseño Iterativo y Aprendizaje desde los Errores
                     </h2>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        El proceso de programación enseña que <strong>los errores son oportunidades de aprendizaje</strong>. 
-                        Scratch facilita este proceso mediante:
+                    <p class="text-gray-700 mb-4">
+                        El proceso de programación enseña que <strong>los errores son oportunidades de aprendizaje</strong>. Scratch facilita este proceso mediante:
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-white p-4 rounded-lg border-2 border-green-300">
-                            <h4 class="font-bold text-green-700 mb-2">
-                                <i class="fas fa-redo mr-2"></i>Iteración Rápida
-                            </h4>
-                            <p class="text-sm text-gray-600">Modificar y probar código instantáneamente</p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-red-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-2">Iteración Rápida</h4>
+                            <p class="text-gray-700 text-sm">Modificar y probar código instantáneamente</p>
                         </div>
-                        <div class="bg-white p-4 rounded-lg border-2 border-blue-300">
-                            <h4 class="font-bold text-blue-700 mb-2">
-                                <i class="fas fa-bug mr-2"></i>Debugging Visual
-                            </h4>
-                            <p class="text-sm text-gray-600">Ver exactamente dónde y cómo ocurren los errores</p>
+                        <div class="bg-red-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-800 mb-2">Debugging Visual</h4>
+                            <p class="text-gray-700 text-sm">Ver exactamente dónde y cómo ocurren los errores</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Classroom Applications -->
-                <div class="key-points">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                        <i class="fas fa-chalkboard-teacher text-purple-500 mr-2"></i>
-                        Aplicaciones en el Aula
+                <!-- Aplicaciones en el Aula -->
+                <div class="section-card rounded-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                        <i class="fas fa-school icon-red mr-3"></i>
+                        Aplicaciones Pedagógicas en el Aula
                     </h2>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg border-l-4 border-purple-500">
-                            <h4 class="font-bold text-purple-700 mb-2">Creatividad y Exploración</h4>
-                            <p class="text-gray-700">Los estudiantes pueden crear historias, juegos y animaciones mientras aprenden lógica de programación</p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <div class="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-palette text-red-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Creatividad y Exploración</h4>
+                            <p class="text-gray-600 text-sm">Los estudiantes pueden crear historias, juegos y animaciones mientras aprenden lógica de programación</p>
                         </div>
-                        <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
-                            <h4 class="font-bold text-blue-700 mb-2">Trabajo Colaborativo</h4>
-                            <p class="text-gray-700">Proyectos compartidos que fomentan la revisión por pares y el aprendizaje conjunto</p>
+                        <div class="text-center">
+                            <div class="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-handshake text-red-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Trabajo Colaborativo</h4>
+                            <p class="text-gray-600 text-sm">Proyectos compartidos que fomentan la revisión por pares y el aprendizaje conjunto</p>
                         </div>
-                        <div class="bg-white p-4 rounded-lg border-l-4 border-green-500">
-                            <h4 class="font-bold text-green-700 mb-2">Pensamiento Lógico</h4>
-                            <p class="text-gray-700">Desarrollo de secuencias, bucles, condicionales y variables de forma visual e intuitiva</p>
+                        <div class="text-center">
+                            <div class="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-brain text-red-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Pensamiento Lógico</h4>
+                            <p class="text-gray-600 text-sm">Desarrollo de secuencias, bucles, condicionales y variables de forma visual e intuitiva</p>
                         </div>
                     </div>
+                </div>
+
+                <!-- Estrategias de Implementación -->
+                <div class="section-card rounded-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                        <i class="fas fa-cogs icon-red mr-3"></i>
+                        Estrategias de Implementación para Docentes
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-red-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Inicio de Clase</h4>
+                            <p class="text-gray-600 text-sm">Comenzar con actividades desenchufadas para introducir conceptos</p>
+                        </div>
+                        <div class="border-l-4 border-red-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Desarrollo</h4>
+                            <p class="text-gray-600 text-sm">Alternar entre momentos de exploración individual y trabajo colaborativo</p>
+                        </div>
+                        <div class="border-l-4 border-red-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Cierre</h4>
+                            <p class="text-gray-600 text-sm">Reflexionar sobre el proceso de aprendizaje y estrategias utilizadas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Próximo Paso -->
+                <div class="red-accent rounded-lg p-6 text-center">
+                    <i class="fas fa-arrow-right text-white text-2xl mb-3"></i>
+                    <p class="text-white font-semibold">Próximo paso: Aplicar estas estrategias en proyectos prácticos con transición hacia la programación como lenguaje universal</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDk930jElO1SpglF%2BuEVsyB5C8Ite46CvhLE00M%2BAQ103575F4UkDvUzet%2Bz8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq%2BB%2BMiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj%2BVnczfBQ6pC4h6sP7nUGOXrLS%2BnUjSLOwa4Z%2FdTwFgJpA6fgsHDcwpz%2FnXhdYb1ZziGzCH1ZVZLET0gZUTEna4d6WyLOskXxQFLEaNgRLnrQZSGKPFfTqZuXvcI88qi0FAMaHnZ3XVXLGnzJTpdU7lQGgAZ4rzOY3tvm%2BMTNrq1gam%2FfzCCRcB0FIvoQvrtI5wr8phIwkbU8xL6XiHCXn3N29dJ6dCMT9BwMOw82xXsL7zodqwH0jNDoH2rosupbGvrlzxb6VXVfqxToKOsBbd7H0CBTReBJRscADz1IEePNkmMYVaraewsEyOlAcjFECcQSJR5Lhkzy805zYG0OmMma6TXDmKYAto%2FqrC2V93zOS%2Bq72SLwG1pi1hRALwRaqOU9SZNktuSg2o%2FnFkklW";
-        window.__genspark_locale = "es-ES";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDk930jElO1SpglF+uEVsyB5C8Ite46CvhLE00M+AQ103575F4UkDvUzet+z8Yx7esKlj2mPzJHAsNz800rkSSXklRKVXSJq+B+MiKDCi2uB2zGCI7cMsIxXj30qGmBLXfoOtBCFOkeMEUOYejxp9tmj+VnczfBQ6pC4h6sP7nUGOXrLS+nUjSLOwa4Z/dTwFgJpA6fgsHDcwpz/nXhdYb1ZziGzCH1ZVZLET0gZUTEna4d6WyLOskXxQFLEaNgRLnrQZSGKPFfTqZuXvcI88qi0FAMaHnZ3XVXLGnzJTpdU7lQGgAZ4rzOY3tvm+MTNrq1gam/fzCCRcB0FIvoQvrtI5wr8phIwkbU8xL6XiHCXn3N29dJ6dCMT9BwMOw82xXsL7zodqwH0jNDoH2rosupbGvrlzxb6VXVfqxToKOsBbd7H0CBTReBJRscADz1IEePNkmMYVaraewsEyOlAcjFECcQSJR5Lhkzy805zYG0OmMma6TXDmKYAto/qrC2V93zOS+q72SLwG1pi1hRALwRaqOU9SZNktuSg2o/nFkklW";
-    </script>
-    
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
